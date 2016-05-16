@@ -1,0 +1,25 @@
+{
+  "name": "nodesynth",
+  "version": "0.0.1",
+  "description": "Library for audio synthesis",
+  "keywords": ["synth", "audio"],
+  "license": "MIT",
+  "author": {
+    "name": "James Lawrence",
+    "email": "jlaw90@hotmail.com",
+    "url": "http://sqrt4.com"
+  },
+  "files": [
+    "nodesynth.js",
+    "lib/oscillator.js",
+    "README.md"
+  ],
+  "main": "nodesynth.js",
+  "dependencies": {
+    "speaker": "0.3.0",
+    "underscore-node": "0.1.2"
+  },
+  "devDependencies": {
+    "coffee-script": "1.10.0"
+  }
+}
