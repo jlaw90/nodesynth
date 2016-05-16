@@ -1,9 +1,9 @@
 ###Setup
 Please make sure you have your environment configured to be able to install native node.js packages (required for audio support).
 
-Run ``npm install`` from the root directory to download and install all dependencies.
+Run ``npm install nodesynth`` from the directory you'll be working in to download and install this package and all dependencies.
 
-Then play!
+Then you can start ``node`` and play!
 
 ### Usage
 Require nodesynth in your JavaScript file like so: ``require('nodesynth')``
@@ -26,6 +26,7 @@ The library is built to be chainable, so you can pass an ``Oscillator`` as the `
 * Add a simple ``Note`` abstraction for doing stuff like ``new NodeSynth.Oscillator('square', C4)``
 * Add a ``Scale`` class with utility methods (first, second, tonic, subtonic, phygrian, )
 * Add mixing functions
+* Work out why there is so much latency (buffer size is small and so is ``samplesPerFrame``...)
 
 ### Nastiness
 This library adds a ``valueAt(time)`` function to the ``Function`` and ``Number`` prototype's.
