@@ -12,7 +12,7 @@ From here, you only need to initialise a ``Synth`` object, set it's ``source`` p
 
 A small example:
 
-    var NodeSynth = require('./lib/nodesynth');
+    var NodeSynth = require('nodesynth');
 
     var ns = new NodeSynth.Synth({bitDepth: 16, sampleRate: 44100});
     ns.play();
