@@ -53,7 +53,7 @@ exports.Synth = class extends Readable
         # nodesynths...)
         global.SampleRate = @sampleRate
 
-        if @source == null or !util.isFunction(@source.valueAt)
+        if @source == null or !_.isFunction(@source.valueAt)
             @buffer.fill(0)
         else
            # Fill our audio buffer
