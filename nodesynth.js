@@ -70,7 +70,7 @@
     _Class.prototype._read = function(size) {
       var converted, i, j, k, ref, ref1, ref2, ri, val;
       global.SampleRate = this.sampleRate;
-      if (this.source === null || !util.isFunction(this.source.valueAt)) {
+      if (this.source === null || !_.isFunction(this.source.valueAt)) {
         this.buffer.fill(0);
       } else {
         for (i = j = 0, ref = this.buffer.length, ref1 = this.bitDepth / 8; ref1 > 0 ? j < ref : j > ref; i = j += ref1) {
