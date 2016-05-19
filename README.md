@@ -52,13 +52,42 @@ ns.play();
 ns.source = new NodeSynth.Oscillator('sq', A4.perfect_unison());
 ```
 
+##### Combining
+All built-in library objects (Oscillator, Combiner) inherit functions from the ``Common`` class, which has methods such as ``mix``, ``add``.
+
+add, subtract, divide, multiply, exponent and modulo all explain their mathematical function.
+
+``mix`` uses an algorithm to smoothly interleave the left and right hand sides to ensure they don't overflow the -1 and +1 boundaries of the audio signal.
+
+An example (interesting alarm sound):
+```javascript
+var NodeSynth = require('nodesynth');
+
+require('nodesynth/notes');
+
+var ns = new NodeSynth.Synth();
+ns.play();
+
+var o1 = new NodeSynth.Oscillator('sin', A4);
+var o2 = new NodeSynth.Oscillator('sin', B5).multiply(new NodeSynth.Oscillator('sq', 1).add(1).multiply(0.5));
+
+ns.source = o1.mix(o2);
+```
+This example creates a LFO square wave (1Hz), adds 1 to the amplitude (the wave is between -1 and +1, adding 1 moves it to 0-2 range) and then multiplies that by 0.5 (normalising it to between 0 and 1).
+
+This LFO square wave is then multiplied by a sinewave oscillator at frequency B5, the result of which is that the square wave will cancel out the B5 sine wave when in the low position (B5 * 0 = 0), and play the sine wave normally when in the high position (B5 * 1 = B5).  The combination of these functions is stored in variable o2.
+
+o1 and o2 are then mixed and output to the speaker.
+
+Try changing the oscillator functions and see how that affects the audio output.
+
 ### Todo
 * ~~Add a simple ``Note`` abstraction for doing stuff like ``new NodeSynth.Oscillator('square', C4)``~~
 * Add an ``Instrument`` abstraction with ADSR envelope
 * Add a ``Sequence`` abstraction for describing a sequence of notes, times, strengths, etc.
 * Add a ``Scale`` class with utility methods (first, second, tonic, subtonic, phygrian, )
 * Add a ``Sampler`` for reading waveforms, performing FFT to get the frequency and rebuilding waveforms with the IFFT to modulate them
-* Add mixing functions such as ``add``, ``subtract``, ``multiply``, ``mix``, etc. (and mix them in...)
+* ~~Add mixing functions such as ``add``, ``subtract``, ``multiply``, ``mix``, etc. (and mix them in...)~~
 * Work out why there is so much latency (buffer size is small and so is ``samplesPerFrame``...)
 * Investigate using MIDI inputs to control parameters
 * Lots more...
