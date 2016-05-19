@@ -11,8 +11,11 @@
   },
   "files": [
     "nodesynth.js",
-    "lib/oscillator.js",
-    "lib/notes.js",
+    "oscillator.js",
+    "notes.js",
+    "combiner.js",
+    "common.js",
+    "dahdsr.js",
     "README.md"
   ],
   "main": "nodesynth.js",
