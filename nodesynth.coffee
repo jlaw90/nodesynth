@@ -8,7 +8,7 @@ util = require('util')
 Number.prototype.valueAt = (time)-> this
 Function.prototype.valueAt = (time) -> this(time)
 
-exports.Oscillator = require('./lib/oscillator')
+exports.Oscillator = require('./oscillator')
 
 exports.Synth = class extends Readable
     constructor: (opts) ->

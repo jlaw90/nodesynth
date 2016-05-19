@@ -21,7 +21,7 @@
     return this(time);
   };
 
-  exports.Oscillator = require('./lib/oscillator');
+  exports.Oscillator = require('./oscillator');
 
   exports.Synth = (function(superClass) {
     extend(_Class, superClass);

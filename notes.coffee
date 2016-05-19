@@ -18,8 +18,10 @@ intervalMap = [
   ['perfect_octave', 'octave', 'P8', 'augmented_seventh', 'A7']
 ];
 
+Common = require('./common')
+
 # An immutable note class
-class Note
+class Note extends Common
   constructor: (note, octave) ->
     @note = note.toUpperCase()
     @octave = octave

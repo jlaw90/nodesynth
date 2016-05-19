@@ -1,11 +1,12 @@
 _ = require('underscore-node')
+Common = require('./common')
 
 pi2 = Math.PI * 2;
-tableLength = 1024
+tableLength = 4096
 sinTable = _.times(tableLength, (i)-> Math.sin((pi2 * i) / tableLength))
 cosTable = _.times(tableLength, (i)-> Math.cos((pi2 * i) / tableLength))
 
-module.exports = class Oscillator
+module.exports = class Oscillator extends Common
   constructor: (func, freq = 0)->
     @freq = freq
     @phase = 0
