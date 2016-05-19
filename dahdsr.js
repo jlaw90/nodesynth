@@ -23,12 +23,12 @@
 
     DAHDSREnvelope.prototype.releaseStart = null;
 
-    function DAHDSREnvelope(delay, attack, hold, decay, sustain1, release) {
+    function DAHDSREnvelope(delay, attack, hold, decay, sustain, release) {
       this.delay = delay;
       this.attack = attack;
       this.hold = hold;
       this.decay = decay;
-      this.sustain = sustain1;
+      this.sustain = sustain;
       this.release = release;
     }
 
@@ -76,13 +76,13 @@
         if (offset < this.hold) {
           return 1;
         }
-        offset -= this.attack;
+        offset -= this.hold;
         if (offset < this.decay) {
           return 1 - ((1 - this.sustain) * (offset / this.decay));
         }
         offset -= this.decay;
         if (this.pressed) {
-          return sustain;
+          return this.sustain;
         }
         this.releaseStart = time;
       }

@@ -44,7 +44,7 @@ class DAHDSREnvelope
 
       if offset < @hold
         return 1 # Hold at 1
-      offset -= @attack
+      offset -= @hold
 
       if offset < @decay
         return 1 - ((1 - @sustain) * (offset / @decay)) # Ramp from hold to sustain level...
@@ -52,7 +52,7 @@ class DAHDSREnvelope
 
       # Sustain...
       if @pressed
-        return sustain
+        return @sustain
 
       # We need to start release here, set release start
       @releaseStart = time
