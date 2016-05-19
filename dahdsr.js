@@ -86,7 +86,7 @@
         }
         this.releaseStart = time;
       }
-      offset = time - this.releasedAt;
+      offset = time - this.releaseStart;
       if (offset > this.release) {
         this.pressedAt = this.releasedAt = this.releaseStart = null;
         return 0;

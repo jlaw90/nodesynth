@@ -57,7 +57,7 @@ class DAHDSREnvelope
       # We need to start release here, set release start
       @releaseStart = time
 
-    offset = time - @releasedAt
+    offset = time - @releaseStart
     if offset > @release
       @pressedAt = @releasedAt = @releaseStart = null # Clean up
       return 0
