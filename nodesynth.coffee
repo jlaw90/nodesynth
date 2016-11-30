@@ -1,7 +1,7 @@
 _ = require('underscore-node')
 
 Readable = require('stream').Readable;
-Speaker = require('speaker')
+Speaker = require('@jlaw90/speaker')
 util = require('util')
 
 # Change some built-in prototypes to allow interaction with the library

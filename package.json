@@ -20,7 +20,7 @@
   ],
   "main": "nodesynth.js",
   "dependencies": {
-    "speaker": "0.3.0",
+    "@jlaw90/speaker": "git+https://github.com/jlaw90/node-speaker.git",
     "underscore-node": "0.1.2"
   },
   "devDependencies": {
