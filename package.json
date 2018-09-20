@@ -1,6 +1,6 @@
 {
   "name": "nodesynth",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Library for audio synthesis",
   "keywords": ["synth", "audio"],
   "license": "MIT",
@@ -20,7 +20,7 @@
   ],
   "main": "nodesynth.js",
   "dependencies": {
-    "@jlaw90/speaker": "git+https://github.com/jlaw90/node-speaker.git",
+    "speaker": "git+https://github.com/jlaw90/node-speaker.git",
     "underscore-node": "0.1.2"
   },
   "devDependencies": {
